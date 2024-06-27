@@ -1,11 +1,11 @@
 const progress = document.getElementById("progress");
 const song = document.getElementById("song");
-const controlIcon = document.getElementById("controlIcon");
 const playPauseButton = document.querySelector(".play-pause-btn");
 const forwardButton = document.querySelector(".controls button.forward");
 const backwardButton = document.querySelector(".controls button.backward");
 const songName = document.querySelector(".music-player h1");
 const artistName = document.querySelector(".music-player p");
+
 
 const songs = [
   {
@@ -82,21 +82,28 @@ song.addEventListener("loadedmetadata", function () {
 
 function pauseSong() {
   song.pause();
-  controlIcon.classList.remove("fa-pause");
-  controlIcon.classList.add("fa-play");
+  console.log("pause")
+  // controlIcon.classList.remove("fa-pause");
+  // controlIcon.classList.add("fa-play");
 }
 
 function playSong() {
   song.play();
-  controlIcon.classList.add("fa-pause");
-  controlIcon.classList.remove("fa-play");
+  // controlIcon.classList.add("fa-pause");
+  // controlIcon.classList.remove("fa-play");
 }
 
 function playPause() {
+  const controlIcon = document.getElementById("controlIcon");
+
   if (song.paused) {
     playSong();
+    controlIcon.classList.remove("fa-play");
+    controlIcon.classList.add("fa-pause");
   } else {
     pauseSong();
+    controlIcon.classList.remove("fa-pause");
+    controlIcon.classList.add("fa-play");
   }
 }
 
