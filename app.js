@@ -140,7 +140,7 @@ updateSongInfo();
 var swiper = new Swiper(".swiper", {
   effect: "coverflow",
   centeredSlides: true,
-  initialSlide: 5,
+  initialSlide: 4,
   slidesPerView: "auto",
   allowTouchMove: false,
   spaceBetween: 40,
